@@ -7,10 +7,15 @@
 <h3>Reviews</h3>
 <ul class="list-group">
   <% if @restaurant.reviews.empty? %>
-    No reviews currently... Wanna <%= link_to 'add one?', new_restaurant_review_path(@restaurant).html_safe %>
+    No reviews currently... Wanna add one?
   <% end %>
   <% @restaurant.reviews.each do |r| %>
     <li class="list-group-item"><%= r.content %></li>
   <% end %>
 </ul>
+<div style="border: 1px solid gray" class="mt-3 p-4">
+  <h4>Write your own review</h4>
+  <%= render 'review_form' %>
+</div>
+
 <%= link_to "View all restaurants", restaurants_path, class: 'btn btn-primary mt-5' %>
