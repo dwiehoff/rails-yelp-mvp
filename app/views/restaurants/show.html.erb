@@ -4,4 +4,13 @@
     <li> <%= (@restaurant.phone_number.present?) ? "Phone: #{@restaurant.phone_number}" : 'No phone number available for this restaurant' %> </li>
   <li>Category: <%= @restaurant.category.capitalize %></li>
 </ul>
+<h3>Reviews</h3>
+<ul class="list-group">
+  <% if @restaurant.reviews.empty? %>
+    No reviews currently... Wanna <%= link_to 'add one?', new_restaurant_review_path(@restaurant).html_safe %>
+  <% end %>
+  <% @restaurant.reviews.each do |r| %>
+    <li class="list-group-item"><%= r.content %></li>
+  <% end %>
+</ul>
 <%= link_to "View all restaurants", restaurants_path %>

@@ -1,0 +1,8 @@
+<h1>Add Review for <%= @restaurant.name %></h1>
+
+<%= simple_form_for [@restaurant, @review] do |f| %>
+  <!-- rating, content -->
+  <%= f.input :rating, collection: (1..5), as: :radio_buttons %>
+  <%= f.input :content, as: :text, autofocus: true, :input_html => { rows: 5 } %>
+  <%= f.submit %>
+<% end %>
