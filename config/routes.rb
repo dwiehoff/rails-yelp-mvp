@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'restaurants/new', to: 'restaurants#new'
   post 'restaurants', to: 'restaurants#create'
   # show single
-  get 'restaurants/:id', to: 'restaurants#show'
+  get 'restaurants/:id', to: 'restaurants#show', as: :restaurant
   # add new review
   get 'restaurants/:id/reviews/new', to: 'reviews#new'
   post 'restaurants/:id/reviews', to: 'reviews#create'

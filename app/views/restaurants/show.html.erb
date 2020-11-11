@@ -1,0 +1,7 @@
+<h1> <%= @restaurant.name %> </h1>
+<ul>
+  <li>Address: <%= @restaurant.address %></li>
+    <li> <%= (@restaurant.phone_number.present?) ? "Phone: #{@restaurant.phone_number}" : 'No phone number available for this restaurant' %> </li>
+  <li>Category: <%= @restaurant.category.capitalize %></li>
+</ul>
+<%= link_to "View all restaurants", restaurants_path %>
