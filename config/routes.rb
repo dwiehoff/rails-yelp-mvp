@@ -1,3 +1,16 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  # resources :restaurants, only: %i[index new create show]
+  # resources :reviews, only: %i[new create]
+
+  # user stories
+  # list all
+  get 'restaurants', to: 'restaurants#index'
+  # add new
+  get 'restaurants/new', to: 'restaurants#new'
+  post 'restaurants', to: 'restaurants#create'
+  # show single
+  get 'restaurants/:id', to: 'restaurants#show'
+  # add new review
+  get 'restaurants/:id/reviews/new', to: 'reviews#new'
+  post 'restaurants/:id/reviews', to: 'reviews#create'
 end
