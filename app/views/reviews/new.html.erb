@@ -4,5 +4,5 @@
   <!-- rating, content -->
   <%= f.input :rating, collection: (1..5), as: :radio_buttons %>
   <%= f.input :content, as: :text, autofocus: true, :input_html => { rows: 5 } %>
-  <%= f.submit %>
+  <%= f.submit class: 'btn btn-primary' %>
 <% end %>
